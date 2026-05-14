@@ -1,0 +1,63 @@
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.4rem;
+    margin: 1.2rem 0 0.5rem;
+}
+
+th, td {
+    padding: 0.7rem 0.9rem;
+    background: var(--table-row);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    text-align: left;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+th {
+    background: var(--table-header);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+tr:hover td {
+    background: var(--btn-hover);
+    transition: background 0.2s;
+}
+
+td form {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+td input[type="number"],
+td input[type="text"] {
+    width: 70px;
+    padding: 0.35rem 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: var(--input-bg);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+td button[type="submit"] {
+    background: #b295d8;
+    color: white;
+    border: none;
+    padding: 0.35rem 0.9rem;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.15s;
+}
+td button[type="submit"]:hover {
+    background: #9e7cc9;
+}

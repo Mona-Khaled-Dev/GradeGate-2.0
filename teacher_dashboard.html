@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="dashboard.css"></head>
+<body>
+<header><span>Welcome, <?php echo $full_name; ?> (Teacher)</span>
+    <div><button class="dark-toggle" onclick="toggleDark()">🌓</button>
+        <a href="login.php?logout=1">Logout</a></div></header>
+<div class="dash">
+    <h2>Your Subjects</h2>
+    <ul><?php echo $subjects_list; ?></ul>
+    <div class="actions">
+        <a href="teacher.php?action=manage_students" class="btn">Manage Students</a>
+        <a href="teacher.php?action=view_submissions" class="btn">View Submissions</a>
+        <a href="grade.php" class="btn">Enter Grades</a>
+    </div>
+    <h3>Create New Subject</h3>
+    <?php if ($subject_msg) echo "<p>$subject_msg</p>"; ?>
+    <form method="post" action="teacher.php">
+        <input type="text" name="subject_name" placeholder="Subject name" required style="width:100%; padding:0.5rem; border-radius:10px;">
+        <button type="submit" name="create_subject" class="btn" style="margin-top:0.5rem;">Create</button>
+    </form>
+</div>
+<script>function toggleDark() {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('dark', document.body.classList.contains('dark'));
+}
+if (localStorage.getItem('dark') === 'true') document.body.classList.add('dark');</script>
+</body></html>

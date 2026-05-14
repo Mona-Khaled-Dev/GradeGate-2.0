@@ -1,0 +1,99 @@
+:root {
+    --bg-start: #e8f0fe;
+    --bg-end: #fce4ec;
+    --card-bg: rgba(255, 255, 255, 0.45);
+    --card-border: rgba(255, 255, 255, 0.6);
+    --text: #3a2e4a;
+    --header-bg: rgba(255, 255, 255, 0.35);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    --btn-bg: rgba(255, 255, 255, 0.7);
+    --btn-hover: rgba(255, 255, 255, 0.9);
+    --input-bg: rgba(255, 255, 255, 0.65);
+    --table-row: rgba(255, 255, 255, 0.5);
+    --table-header: rgba(255, 255, 255, 0.75);
+    --toggle-bg: rgba(255, 255, 255, 0.5);
+}
+body.dark {
+    --bg-start: #1e1f30;
+    --bg-end: #2d1e36;
+    --card-bg: rgba(40, 42, 65, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text: #e0e0f0;
+    --header-bg: rgba(30, 32, 50, 0.6);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --btn-bg: rgba(150, 140, 255, 0.25);
+    --btn-hover: rgba(150, 140, 255, 0.45);
+    --input-bg: rgba(55, 57, 80, 0.7);
+    --table-row: rgba(55, 57, 80, 0.55);
+    --table-header: rgba(50, 52, 75, 0.8);
+    --toggle-bg: rgba(150, 140, 255, 0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    color: var(--text);
+    min-height: 100vh;
+    transition: background 0.4s, color 0.3s;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+}
+body::before {
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: rgba(174, 180, 255, 0.3);
+}
+body::after {
+    bottom: -100px; left: -100px;
+    width: 380px; height: 380px;
+    background: rgba(255, 190, 210, 0.3);
+}
+body.dark::before { background: rgba(130, 110, 200, 0.25); }
+body.dark::after  { background: rgba(180, 120, 160, 0.25); }
+
+header {
+    background: var(--header-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--card-border);
+    border-radius: 0 0 28px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header a,
+.dark-toggle {
+    background: var(--btn-bg);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--card-border);
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+header a:hover,
+.dark-toggle:hover {
+    background: var(--btn-hover);
+    transform: translateY(-1px);
+}

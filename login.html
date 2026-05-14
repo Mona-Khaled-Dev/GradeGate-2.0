@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>GradeGate</title>
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="login.css"></head>
+<body>
+<button class="dark-toggle" onclick="toggleDark()">🌓</button>
+<?php if ($page == 'about'): ?>
+<div class="container"><h1>About GradeGate</h1>
+    <p>We help teachers and students stay organised. Teachers create subjects, manage students, and give grades. Students enrol in subjects, upload assignments, and track their results — all in one place.</p>
+    <p>Our goal is to make academic life easier and more transparent.</p>
+    <a href="login.php">← Back to Home</a></div>
+<?php elseif ($mode == 'login'): ?>
+<div class="container"><h1>GradeGate</h1>
+    <?php if ($error) echo "<p class='error'>$error</p>"; ?>
+    <?php if ($success) echo "<p class='success'>$success</p>"; ?>
+    <form method="post" action="login.php">
+        <input type="hidden" name="action" value="login">
+        <label>Username: <input type="text" name="username" required></label>
+        <label>Password: <input type="password" name="password" required></label>
+        <button type="submit">Log In</button>
+    </form>
+    <p><a href="login.php?mode=register">Register here</a> | <a href="login.php">Home</a></p></div>
+<?php elseif ($mode == 'register'): ?>
+<div class="container"><h1>GradeGate</h1>
+    <?php if ($error) echo "<p class='error'>$error</p>"; ?>
+    <?php if ($success) echo "<p class='success'>$success</p>"; ?>
+    <form method="post" action="login.php">
+        <input type="hidden" name="action" value="register">
+        <label>Full Name: <input type="text" name="full_name" required></label>
+        <label>Username: <input type="text" name="username" required></label>
+        <label>Password: <input type="password" name="password" required></label>
+        <label>Role: <select name="role" required>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select></label>
+        <button type="submit">Create Account</button>
+    </form>
+    <p><a href="login.php?mode=login">Log in</a> | <a href="login.php">Home</a></p></div>
+<?php else: ?>
+<div class="container"><h1>🎓 GradeGate</h1>
+    <p>Your assignment tracking hub</p>
+    <div style="margin-top:2rem; display:flex; flex-direction:column; gap:0.5rem;">
+        <a href="login.php?mode=login" class="btn">Login</a>
+        <a href="login.php?mode=register" class="btn">Register</a>
+        <a href="login.php?page=about" class="btn">📖 About Us</a>
+    </div></div>
+<?php endif; ?>
+<script>
+    function toggleDark() {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('dark', document.body.classList.contains('dark'));
+    }
+    if (localStorage.getItem('dark') === 'true') document.body.classList.add('dark');
+</script>
+</body></html>

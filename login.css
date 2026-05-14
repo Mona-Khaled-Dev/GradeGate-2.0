@@ -1,0 +1,88 @@
+.container {
+    max-width: 420px;
+    margin: 5rem auto;
+    background: var(--card-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 36px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow), 0 0 0 1px var(--card-border);
+}
+
+.container h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+}
+
+.container label {
+    display: block;
+    text-align: left;
+    margin-top: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.container input,
+.container select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    border: 1px solid var(--card-border);
+    background: var(--input-bg);
+    backdrop-filter: blur(6px);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    margin-top: 0.25rem;
+    outline: none;
+    transition: 0.2s;
+}
+.container input:focus,
+.container select:focus {
+    border-color: #b295d8;
+    box-shadow: 0 0 0 3px rgba(178, 149, 216, 0.2);
+}
+
+.container button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #b295d8, #f4a0c0);
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(178, 149, 216, 0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(178, 149, 216, 0.45);
+}
+
+.error { color: #e0485c; font-weight: 600; margin-bottom: 0.8rem; }
+.success { color: #3ba55c; font-weight: 600; margin-bottom: 0.8rem; }
+.container p { margin-top: 1rem; font-size: 0.9rem; }
+.container a { color: #6d5fa0; font-weight: 600; text-decoration: none; }
+.container a:hover { text-decoration: underline; }
+
+/* home page specific */
+.container .btn {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    background: var(--btn-bg);
+    color: var(--text);
+    border: 1px solid var(--card-border);
+}
+.container .btn:hover {
+    background: var(--btn-hover);
+    text-decoration: none;
+}

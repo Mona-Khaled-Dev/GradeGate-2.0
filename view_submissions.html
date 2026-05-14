@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>View Submissions</title>
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="tables.css"></head>
+<body>
+<header><a href="teacher.php">← Dashboard</a>
+    <div><button class="dark-toggle" onclick="toggleDark()">🌓</button><a href="login.php?logout=1">Logout</a></div></header>
+<h2>All Submissions (Your Subjects)</h2>
+<?php echo $submissions_table; ?>
+<script>function toggleDark() {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('dark', document.body.classList.contains('dark'));
+}
+if (localStorage.getItem('dark') === 'true') document.body.classList.add('dark');</script>
+</body></html>

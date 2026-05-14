@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Upload Assignment</title>
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="forms.css"></head>
+<body>
+<header><a href="student.php">← Dashboard</a>
+    <div><button class="dark-toggle" onclick="toggleDark()">🌓</button><a href="login.php?logout=1">Logout</a></div></header>
+<div class="form-box">
+    <h2>Upload Assignment</h2>
+    <form method="post" enctype="multipart/form-data" action="upload.php">
+        <label>Subject: <select name="subject_id" required><?php echo $subject_options; ?></select></label>
+        <label>File: <input type="file" name="assignment" required></label>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+<script>function toggleDark() {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('dark', document.body.classList.contains('dark'));
+}
+if (localStorage.getItem('dark') === 'true') document.body.classList.add('dark');</script>
+</body></html>
