@@ -1,6 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'teacher') { header('Location: login.php'); exit; }
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'teacher') {
+    header('Location: login.php'); exit;
+}
 $conn = mysqli_connect('localhost', 'root', '1', 'gradegate2') or die('Connection failed');
 $tid = $_SESSION['user_id'];
 
@@ -15,7 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['assignment_id'])) {
 }
 
 $pending_table = '';
-$res = mysqli_query($conn, "SELECT a.id, a.file_name, a.upload_date, u.full_name AS sn, s.name AS subj FROM assignments a JOIN users u ON a.student_id=u.id JOIN subjects s ON a.subject_id=s.id WHERE s.teacher_id=$tid AND a.grade IS NULL ORDER BY a.upload_date DESC");
+$res = mysqli_query($conn, "SELECT a.id, a.file_name, a.upload_date, u.full_name AS sn, s.name AS subj
+                            FROM assignments a JOIN users u ON a.student_id=u.id JOIN subjects s ON a.subject_id=s.id
+                            WHERE s.teacher_id=$tid AND a.grade IS NULL ORDER BY a.upload_date DESC");
 while ($r = mysqli_fetch_assoc($res)) {
     $pending_table .= "<tr>
         <td>{$r['sn']}</td><td>{$r['subj']}</td><td>{$r['file_name']}</td><td>{$r['upload_date']}</td>

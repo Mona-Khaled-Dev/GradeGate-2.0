@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>Student Dashboard</title>
-    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="dashboard.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
 <body>
-<header><span>Welcome, <?php echo $full_name; ?> (Student)</span>
-    <div><button class="dark-toggle" onclick="toggleDark()">🌓</button>
-        <a href="login.php?logout=1">Logout</a></div></header>
+<header>
+    <span>Welcome, <?php echo $full_name; ?> (Student)</span>
+    <div>
+        <button class="dark-toggle" onclick="toggleDark()">🌓</button>
+        <a href="login.php?logout=1">Logout</a>
+    </div>
+</header>
 <div class="dash">
     <h2>My Subjects</h2>
     <ul><?php echo $subjects_list; ?></ul>
@@ -17,10 +25,14 @@
     <?php if ($enroll_msg) echo "<p>$enroll_msg</p>"; ?>
     <?php if ($available_form): ?>
     <form method="post" action="student.php">
-        <label>Subject: <select name="subject_id" required><?php echo $available_form; ?></select></label>
+        <label>Subject:
+            <select name="subject_id" required><?php echo $available_form; ?></select>
+        </label>
         <button type="submit" name="enroll_self" class="btn">Enroll</button>
     </form>
-    <?php else: ?><p>Enrolled in all subjects.</p><?php endif; ?>
+    <?php else: ?>
+    <p>Enrolled in all subjects.</p>
+    <?php endif; ?>
 </div>
 <script>
     function toggleDark() {
@@ -29,4 +41,5 @@
     }
     if (localStorage.getItem('dark') === 'true') document.body.classList.add('dark');
 </script>
-</body></html>
+</body>
+</html>

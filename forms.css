@@ -1,78 +1,29 @@
 .form-box {
-    max-width: 520px;
-    margin: 2.5rem auto;
-    background: var(--card-bg);
-    backdrop-filter: blur(22px);
+    max-width: 520px; margin: 2.5rem auto;
+    background: var(--card-bg); backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
-    border-radius: 32px;
-    padding: 2.2rem;
+    border-radius: 32px; padding: 2.2rem;
     box-shadow: var(--shadow), 0 0 0 1px var(--card-border);
 }
-
-.form-box h2 {
-    text-align: center;
-    margin-bottom: 1.8rem;
-    color: var(--text);
-    font-size: 1.8rem;
+.form-box h2 { text-align: center; margin-bottom: 1.8rem; color: var(--text); font-size: 1.8rem; }
+.form-box label { display: block; margin-bottom: 1.1rem; font-weight: 600; color: var(--text); }
+.form-box input, .form-box select {
+    width: 100%; padding: 0.7rem 0.9rem; border-radius: 16px;
+    border: 1px solid var(--card-border); background: var(--input-bg);
+    backdrop-filter: blur(6px); font-family: inherit; font-size: 0.95rem; color: var(--text);
+    margin-top: 0.2rem; outline: none; transition: border 0.2s;
 }
-
-.form-box label {
-    display: block;
-    margin-bottom: 1.1rem;
-    font-weight: 600;
-    color: var(--text);
+.form-box input:focus, .form-box select:focus {
+    border-color: #b295d8; box-shadow: 0 0 0 3px rgba(178, 149, 216, 0.2);
 }
-
-.form-box input,
-.form-box select {
-    width: 100%;
-    padding: 0.7rem 0.9rem;
-    border-radius: 16px;
-    border: 1px solid var(--card-border);
-    background: var(--input-bg);
-    backdrop-filter: blur(6px);
-    font-family: inherit;
-    font-size: 0.95rem;
-    color: var(--text);
-    margin-top: 0.2rem;
-    outline: none;
-    transition: border 0.2s;
-}
-.form-box input:focus,
-.form-box select:focus {
-    border-color: #b295d8;
-    box-shadow: 0 0 0 3px rgba(178, 149, 216, 0.2);
-}
-
 .form-box button {
-    margin-top: 1.5rem;
-    padding: 0.7rem 2rem;
-    border: none;
-    border-radius: 22px;
+    margin-top: 1.5rem; padding: 0.7rem 2rem; border: none; border-radius: 22px;
     background: linear-gradient(135deg, #b295d8, #f4a0c0);
-    color: white;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.15s;
+    color: white; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.15s;
     box-shadow: 0 6px 16px rgba(178, 149, 216, 0.35);
 }
-.form-box button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(178, 149, 216, 0.45);
-}
-
-.form-box a {
-    color: #6d5fa0;
-    font-weight: 600;
-    text-decoration: none;
-}
+.form-box button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(178, 149, 216, 0.45); }
+.form-box a { color: #6d5fa0; font-weight: 600; text-decoration: none; }
 .form-box a:hover { text-decoration: underline; }
-
-.form-box ul {
-    list-style: none;
-    margin: 1rem 0;
-}
-.form-box ul li {
-    padding: 0.3rem 0;
-}
+.form-box ul { list-style: none; margin: 1rem 0; }
+.form-box ul li { padding: 0.3rem 0; }
